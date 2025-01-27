@@ -1,0 +1,7 @@
+docusign-esign==4.0.0
+Flask==3.1.0
+openai==1.60.1
+PyPDF2==3.0.1
+pywhatkit==5.0
+spacy==3.8.4
+vaderSentiment==3.3.2

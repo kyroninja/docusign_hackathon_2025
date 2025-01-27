@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope Query</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .input-group {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+            
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;  /* Add margin-bottom for spacing */
+            width: 94%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form action="/get-envelopes" method="POST">
+        <button type="submit" class="button">Get Envelopes in Account</button>
+    </form>
+
+    <div class="input-group">
+        <form action="/query-envelope-details" method="POST">
+            <label for="envelopeDetails">Query Envelope Details</label>
+            <input type="text" name="envelope_id" id="envelopeDetails" placeholder="Enter Envelope ID">
+            <button type="submit" class="button">Query Envelope Details</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+

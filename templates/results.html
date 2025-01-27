@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+            word-wrap: break-word; /* Ensures long text doesn't overflow */
+        }
+        .back-button {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-button a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .back-button a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Results - Also sent to Whatsapp</h2>
+    
+        {% for key, value in info.items() %}
+        <div class="result">
+            <p><strong>{{ key }}:</strong> {{ value }}</p>
+        </div>
+        {% endfor %}
+    
+        <div class="back-button">
+            <button onclick="goBack()">Back</button>
+        </div>
+    </div>
+    
+    <script>
+        function goBack() {
+            // Use browser's history to navigate back
+            window.history.back();
+        }
+    </script>
+    
+
+</body>
+</html>

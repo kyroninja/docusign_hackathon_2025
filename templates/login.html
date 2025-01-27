@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuSign Developer Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-evenly; /* Distribute buttons evenly */
+            margin-top: 20px;
+        }
+        .button-container button {
+            width: 45%; /* Make buttons take up 45% of the container width */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>DocuSign Login</h2>
+        <p>Click the button below to grant consent for DocuSign access in the developer environment</p>
+
+        <form action="/grant-consent" method="GET">
+            <button type="submit" class="button">Grant Consent</button>
+        </form>
+
+        <!-- Conditional display after consent request -->
+        <div class="button-container">
+            <p>Granted consent?</p>
+            <form action="/process-consent" method="POST">
+                <button type="submit" name="consent_granted" value="Yes" class="button">Yes</button>
+                <button type="submit" name="consent_granted" value="No" class="button">No</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

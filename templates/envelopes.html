@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope List</title>
+    <style>
+        /* Add same styles as before */
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Envelopes in Account</h2>
+    <ul>
+        {% for envelope_id, info in details.items() %}
+        <h4>Envelope ID: {{ envelope_id }}</h4>
+        <div class="details">
+            
+        </div>
+    {% endfor %}
+    </ul>
+    <a href="/">Go Back to Home</a>
+</div>
+
+</body>
+</html>

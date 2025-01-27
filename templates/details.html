@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .button.secondary {
+            background-color: #28a745;
+        }
+        .button.secondary:hover {
+            background-color: #218838;
+        }
+        .doc-container {
+            margin-top: 20px;
+        }
+        .doc-container div {
+            margin-bottom: 15px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Envelope Details</h2>
+    {% for envelope_id, info in details.items() %}
+        <h2>Envelope ID: {{ envelope_id }}</h2>
+        <div class="details">
+            <p><strong>Subject:</strong> {{ info.Subject }}</p>
+            <p><strong>Created Date and Time:</strong> {{ info.Created_date_time }}</p>
+            <p><strong>Sender:</strong> {{ info.Sender }}</p>
+        </div>
+    {% endfor %}
+
+    <!-- Display document details if they exist -->
+    {% if doc_details %}
+    <div class="doc-container">
+        <h3>Documents</h3>
+        {% for doc, info in doc_details.items() %}
+        <div>
+            <p>{{ info.Name }} (ID: {{ doc }})</p>
+            <!-- Button group for download and process -->
+            <div class="button-group">
+                <!-- Download Button -->
+                <form action="{{ url_for('download', envelope_id=info.Envelope_ID, document_id=info.Document_ID) }}" method="GET">
+                    <button type="submit" class="button">Download Document</button>
+                </form>
+                <!-- Process through AI Button -->
+                <form action="{{ url_for('process_ai', envelope_id=info.Envelope_ID, document_id=info.Document_ID) }}" method="GET">
+                    <button type="submit" class="button secondary">Process through AI</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No documents available.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
