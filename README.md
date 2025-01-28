@@ -26,3 +26,4 @@ The project was inspired by the growing need for the everyday person to avoid th
 
 ## 🛠 *Demo Link*
 - **Link**: https://completely-organic-finch.ngrok-free.app/
+- Note that it running on a very minimal cloud instance, if it times out just try again. You dont need to authenticate, just click the 'Yes' button
