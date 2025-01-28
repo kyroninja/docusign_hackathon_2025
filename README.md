@@ -1,13 +1,13 @@
 # DocuSign Hackathon Project 🚀
 
-Welcome to our DocuSign Hackathon project! This repository contains the code and resources for our innovative solution designed to streamline document workflows, enhance collaboration, and showcase the power of the DocuSign API.
+Welcome to our DocuSign Hackathon project! This repository contains the code and resources for our innovative solution designed to help users avoid the agreement trap.
 
 ---
 
 ## 📌 *About the Project*
 
 ### *Inspiration*
-The project was inspired by the growing need for secure, efficient, and accessible tools for document management. We aimed to leverage DocuSign's powerful API to create a solution that simplifies agreements and fosters innovation.
+The project was inspired by the growing need for the everyday person to avoid the agreement trap. Often documents are long and have lots of legal jargon making hard to understand what one is getting into. So the solution allows one to see documents sent to the user, analysis by AI and then a decision can be taken based on the AI summary and recommendations
 
 ### *Key Features*
 - User-Friendly Interface: Built with simplicity and accessibility in mind.
